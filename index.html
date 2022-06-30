@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Alloy Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1 >Low Steel Alloy Prediction Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        Carbon= <input  type="text" name="Carbon" placeholder="0.01 - 0.34" required="required" />
+        Silicon= <input type="text" name="Silicon" placeholder="0.18 - 0.52" required="required" /><br><br>
+		Manganese= <input type="text" name="Manganese" placeholder="0.42 - 1.48" required="required" />
+		Phosphorus= <input type="text" name="Phosphorus" placeholder="0.006 - 0.03" required="required" /><br><br>
+        Sulfur= <input type="text" name="Sulfur" placeholder="0.003 - 0.02" required="required" />
+        Nickel= <input type="text" name="Nickel" placeholder="0.0 - 0.6" required="required" /><br><br>
+		Chromium= <input type="text" name="Crhomium" placeholder="0.0 - 1.31" required="required" />
+		Molybdenum= <input type="text" name="Molybdenum" placeholder="0.005 - 1.35" required="required" /><br><br>
+        Copper= <input type="text" name="Copper" placeholder="0.0 - 0.25" required="required" />
+		Vanadium= <input type="text" name="Vanadium" placeholder="0.0 - 0.3" required="required" /><br><br>
+        Aluminum= <input type="text" name="Aluminum" placeholder="0.002 - 0.05" required="required" />
+        Sodium= <input type="text" name="Sodium" placeholder="0.0025 - 0.015" required="required" /><br><br>
+		Carbon Equivalent= <input type="text" name="Carbon Equivalent" placeholder="0.0 - 0.437" required="required" />
+        Nobium & Tantalum= <input type="text" name="Nobium & Tantalum" placeholder="0.0 - 0.0017" required="required" /><br><br>
+        Temperature (°C)= <input type="text" name="Temperature" placeholder="27 - 650" required="required" /><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+      <br> <br>
+     {{ prediction_text1 }}
+      <br> <br>
+     {{ prediction_text2 }}
+      <br> <br>
+     {{ prediction_text3 }}
+
+ </div>
+
+
+</body>
+</html>
